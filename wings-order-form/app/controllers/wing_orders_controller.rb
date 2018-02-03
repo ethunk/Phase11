@@ -25,6 +25,27 @@ class WingOrdersController < ApplicationController
     end
   end
 
+  def edit
+    @wing_order = WingOrder.find(params[:id])
+    @state_collection = WingOrder::STATES
+    @quantity_collection = WingOrder::QUANTITIES
+    @flavor_collection = Flavor.all
+  end
+
+  def update
+    @wing_order = WingOrder.find(params[:id])
+    if @wing_order.save
+      flash[:notice] = "Wing order updated!"
+      @wing_order.update(wing_order_params)
+      redirect_to wing_orders_path
+    else
+      flash[:alert] = "Wing order not updated"
+      render :edit
+    end
+  end
+
+
+
   private
 
   def wing_order_params

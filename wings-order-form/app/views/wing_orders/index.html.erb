@@ -1,5 +1,13 @@
 <h1>Wing Orders</h1>
 
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <div class=".wing_orders">
 <%  @wing_orders.each do |wing_order| %>
   <div class=".wing_order">
@@ -12,7 +20,7 @@
       <span><%= flavor.name %></span>
     <% end %>
   </div>
-  <%= link_to "Edit Order", edit_wing_order_path %>
+  <%= link_to "Edit Order", edit_wing_order_path(wing_order.id) %>
   <hr />
 <% end %>
 </div>

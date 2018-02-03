@@ -29,4 +29,8 @@
     <%= f.collection_check_boxes(:flavor_ids, @flavor_collection, :id, :name) %>
   </div>
 
+  <div class='row actions'>
+    <%= f.submit "Place Order" %>
+  </div>
+
 <% end %>

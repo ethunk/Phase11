@@ -1,3 +1,4 @@
+require 'pry'
 require "rails_helper"
 
 feature "user views wing orders" do
@@ -16,15 +17,14 @@ feature "user views wing orders" do
   let!(:order_second_flavor) { OrderFlavor.create(wing_order: wing_order, flavor: sweet_chili_flavor) }
 
   scenario "edits an order" do
-    visit edit_wing_order_path(wing_order)
-
+    visit 'wing_orders'
+    click_on 'Edit Order'
 
     fill_in "Full Name", with: "Tony Peterson"
     fill_in "City", with: "Fort Wayne"
     select("Maine", from: "State")
     choose "50 wings"
     check "Add Ranch Dressing"
-    check "Buffalo"
     check "Sweet Chili"
     click_button "Place Order"
 

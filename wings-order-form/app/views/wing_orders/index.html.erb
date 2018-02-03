@@ -3,7 +3,7 @@
 <div class=".wing_orders">
 <%  @wing_orders.each do |wing_order| %>
   <div class=".wing_order">
-    <h2><%= wing_order.customer_name %></h2>
+    <h2>Order For: <%= wing_order.customer_name %></h2>
     <span><%= "#{wing_order.city}, #{wing_order.state}" %></span>
     <span>Quantity: <%= wing_order.quantity %></span>
     <span>Include Ranch Dressing?: <%= wing_order.ranch_dressing %></span>
@@ -12,6 +12,7 @@
       <span><%= flavor.name %></span>
     <% end %>
   </div>
+  <%= link_to "Edit Order", edit_wing_order_path %>
   <hr />
 <% end %>
 </div>

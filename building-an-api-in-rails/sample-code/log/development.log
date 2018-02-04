@@ -1,0 +1,7 @@
+Started GET "/api/v1/campers" for 127.0.0.1 at 2018-02-04 17:09:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CampersController#index as HTML
+  [1m[36mCamper Load (0.7ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+Completed 200 OK in 27ms (Views: 11.1ms | ActiveRecord: 6.7ms)
+
+

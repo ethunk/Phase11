@@ -4,4 +4,6 @@ class CampsitesController < ApplicationController
     @title = "All Campsites:"
     @campsites = Campsite.all
   end
+
+
 end

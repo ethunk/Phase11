@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -16,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140911200333) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "board_game_collections", force: true do |t|
+  create_table "board_game_collections", force: :cascade do |t|
     t.integer  "user_id",       null: false
     t.integer  "board_game_id", null: false
     t.date     "purchased"
@@ -24,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140911200333) do
     t.datetime "updated_at"
   end
 
-  create_table "board_games", force: true do |t|
+  create_table "board_games", force: :cascade do |t|
     t.string   "name",         null: false
     t.string   "publisher",    null: false
     t.text     "description"
@@ -33,11 +32,10 @@ ActiveRecord::Schema.define(version: 20140911200333) do
     t.datetime "updated_at"
     t.integer  "min_players"
     t.integer  "max_players"
+    t.index ["name"], name: "index_board_games_on_name", unique: true, using: :btree
   end
 
-  add_index "board_games", ["name"], name: "index_board_games_on_name", unique: true, using: :btree
-
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",     null: false
     t.string   "encrypted_password",     default: "",     null: false
     t.string   "reset_password_token"
@@ -53,9 +51,8 @@ ActiveRecord::Schema.define(version: 20140911200333) do
     t.string   "role",                   default: "user"
     t.string   "first_name"
     t.string   "last_name"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

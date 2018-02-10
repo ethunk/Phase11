@@ -7,4 +7,9 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :role, inclusion: { in: ['user', 'admin'] }
+
+  def is_admin?
+    role == 'admin'
+  end
+
 end

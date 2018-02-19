@@ -1,0 +1,28 @@
+
+
+
+
+<div class='top-bar'>
+  <h1>Questions</h1>
+  <p ><a id='submit-link' href='/questions/new'>Click to submit your own Question...</a>
+  <p id="notice"><%= notice %></p>
+</div>
+
+<div class= 'questions'>
+<table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= link_to "#{question.title}", question %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>

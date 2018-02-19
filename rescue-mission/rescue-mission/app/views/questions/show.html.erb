@@ -1,0 +1,28 @@
+
+<div class='top-bar'>
+  <p id="notice"><%= notice %></p>
+  <h1>Question <%=@question.id%> </h1>
+</div>
+
+<div class='question'>
+<table>
+  <tbody>
+      <tr>
+        <h2><%= @question.title %><h1>
+      </tr>
+      <tr>
+          <h4><%= markdown @question.description%></h4>
+      </tr>
+      <tr>
+        <td><%= link_to "Edit Question", edit_question_path(@question) %></td>
+        <td><%= link_to 'Delete Question', question_path(@question), method: :delete, data: { confirm: 'Are you sure you want to delete this question?' } %></td>
+      </tr>
+  </tbody>
+</table>
+<br>
+</div>
+
+
+<%= render '/questions/answer_error_messages' %>
+<%= render '/questions/answer_form_submission' %>
+<%= render '/answers/answer' %>

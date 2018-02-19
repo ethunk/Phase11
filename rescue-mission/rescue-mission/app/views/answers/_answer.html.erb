@@ -1,0 +1,16 @@
+<div class='top-bar'>
+  <h1>Answer(s):</h1>
+</div>
+
+<div class='answers container-fluid'>
+<table>
+  <tbody>
+    <ol>
+    <%@question.answers.order(:created_at).each do |answer|%>
+        <li><h4><%= markdown answer.description %><h4></li>
+    <%end%>
+  </ol>
+  </tbody>
+</table>
+<br>
+</div>

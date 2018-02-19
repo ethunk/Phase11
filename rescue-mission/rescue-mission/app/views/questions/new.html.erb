@@ -1,0 +1,26 @@
+
+
+
+
+<div class='top-bar'>
+  <p id="notice"><%= notice %></p>
+  <h1>New Question</h1>
+</div>
+
+<%= render 'error_messages' %>
+
+<div class='form-submission container'>
+  <%= form_for @question do |f| %>
+    <div>
+      <%=f.label :title %><br />
+      <%=f.text_field :title, placeholder: 'Enter Title' %>
+    </div>
+    <div>
+      <%=f.label :description %><br />
+      <%=f.text_area :description, placeholder: 'Describe your inquiry' %><br />
+    </div>
+    <div>
+      <%=f.submit value: 'Save Question'%><br />
+    </div>
+  <%end%>
+</div>

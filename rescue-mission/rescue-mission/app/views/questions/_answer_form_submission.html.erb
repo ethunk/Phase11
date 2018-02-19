@@ -1,0 +1,13 @@
+
+<div class='answer-form-submission container'>
+  <h4 class=answer_div> Would you like to submit your own answer?</h4>
+  <%= form_for [@question, @answer] do |f| %>
+    <div>
+      <%=f.label :description %><br />
+      <%=f.text_area :description, placeholder: 'Describe Your Answer', style: "width: 365px; height: 50px" %><br />
+    </div>
+    <div>
+      <%=f.submit value: 'Submit Answer'%><br />
+    </div>
+  <%end%>
+</div>

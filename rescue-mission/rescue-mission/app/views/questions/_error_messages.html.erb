@@ -1,0 +1,10 @@
+<% if @question.errors.any? %>
+  <div id='error_notification container'>
+    <h2>The following errors occured:<h2>
+    <ul>
+      <%@question.errors.full_messages.each do |err_msg| %>
+      <li class='err_msg'><p><%= err_msg %> </p></li>
+      <%end%>
+    </ul>
+  </div>
+<% end %>

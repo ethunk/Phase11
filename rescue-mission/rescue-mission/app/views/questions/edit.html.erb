@@ -1,0 +1,32 @@
+
+<div class='top-bar'>
+  <p id="notice"><%= notice %></p>
+  <h1>Edit Question <%=@question.id%> </h1>
+</div>
+
+<%= render 'error_messages' %>
+
+
+<div class='form-submission'>
+  <%= form_for @question, method: :patch do |f| %>
+    <div>
+      <%=f.label :title %><br />
+      <%=f.text_field :title, placeholder: @question.title %>
+    </div>
+    <div>
+      <%=f.label :description %><br />
+      <%=f.text_area :description, placeholder: @question.description%><br />
+    </div>
+    <div>
+      <%=f.submit value: 'Update Question'%><br />
+    </div>
+  <%end%>
+</div>
+<div class='bottom-links'>
+  <p class='links'>
+    <% link_to "Back", question_path(@question) %>
+  </p>
+  <p class='links'>
+    <%= link_to 'Delete Question', question_path(@question), method: :delete, data: { confirm: 'Are you sure you want to delete this question?' } %></p>
+  </p>
+</div>

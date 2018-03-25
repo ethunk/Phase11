@@ -1,0 +1,30 @@
+<h1 class='card-divider'>
+  <%= @restaurant.name %>
+  <p class='address'>
+    <%= @restaurant.address + ", " + [@restaurant.city, @restaurant.state].join(", ") + " " + @restaurant.zip %>
+  </p>
+</h1>
+<div class="card-section">
+  <p><%= @restaurant.description %></p>
+</div>
+<div>
+  <%= link_to "Add a Review", new_restaurant_review_path(@restaurant), class: 'button', method: :get %>
+</div>
+
+<div class="card" style="width: 500px;">
+  <% @reviews.each do |review| %>
+  <div class="card-divider">
+    <table>
+      <tr>
+        <th>Rating</th>
+        <th>Created at: </th>
+        <th>Review</th>
+      </tr>
+      <tr>
+        <td><%= review.rating %></td>
+        <td> <%= review.created_at.strftime("%B %d %Y") %></td>
+        <td><%= review.body %></p>
+      </tr>
+  </div>
+  <% end %>
+</div>

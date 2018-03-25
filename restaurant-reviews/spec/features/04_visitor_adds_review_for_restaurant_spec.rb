@@ -11,7 +11,6 @@ feature "visitors can add reviews for restaurants" do
     dumpling_king = Restaurant.create(name: 'Dumpling King', address: '33 Harrison Ave', city: 'Boston', state: 'MA', zip: '12111', description: "Straightforward dumplings for a great price.")
 
     visit restaurant_path(dumpling_king)
-
     click_link "Add a Review"
 
     expect(page).to have_content "Review Form for Dumpling King"

@@ -1,0 +1,21 @@
+<h1>
+  List of Restaurants
+</h1>
+
+
+<div class="small-4 small-offset-4">
+  <h5 class='button'><%= link_to "Add New Restaurant", new_restaurant_path, :id => 'submit_link' %></h5>
+</div>
+
+<% @restaurants.each do |restaurant| %>
+  <div class="card" style="width: 300px;">
+    <div class="card-divider">
+      <%= link_to("#{restaurant.name}", restaurant_path(restaurant), :id => "restaurant_title") %>
+    </div>
+    <div class='card-section'>
+      <%= restaurant.description %>
+    </div>
+  </div>
+<% end %>
+
+<%= paginate @restaurants %>

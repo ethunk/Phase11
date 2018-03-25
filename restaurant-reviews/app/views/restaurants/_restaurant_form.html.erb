@@ -1,0 +1,25 @@
+
+<div class = 'container'>
+<%= form_for @restaurant do |f| %>
+
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :address, "Address" %>
+  <%= f.text_field :address %>
+
+  <%= f.label :city, "City" %>
+  <%= f.text_field :city %>
+
+  <%= f.label :state, "State" %>
+  <%= f.text_field :state %>
+
+  <%= f.label :zip, "Zipcode" %>
+  <%= f.text_field :zip %>
+
+  <%= f.label :description, "Description" %>
+  <%= f.text_area :description %>
+
+  <%= f.submit "Add Restaurant", class: 'button', method: :post, url: restaurants_path  %>
+
+<% end %>

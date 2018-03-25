@@ -1,3 +1,5 @@
+@import "foundation_and_overrides";
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -11,9 +13,23 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require foundation_and_overrides
  *= require_self
+//= require foundation_and_overrides
+
+
+
  */
 
+.address {
+  display: inline;
+  font-size: 1rem;
+  margin: auto;
+}
+
+#submit_link {
+  color: #ffffff;
+}
 
  .notice {
    margin: 2px;

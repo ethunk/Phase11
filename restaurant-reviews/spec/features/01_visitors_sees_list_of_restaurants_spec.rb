@@ -10,7 +10,6 @@ feature "visitor sees a list of restaurants" do
     rock_bottom = Restaurant.create(name: "Rock Bottom", address: "Beach street", city: "Boston", state: "MA", zip: "12112")
 
     visit restaurants_path
-
     expect(page).to have_content "Rock Bottom"
     expect(page).to have_link "Dumpling King"
 
@@ -18,6 +17,7 @@ feature "visitor sees a list of restaurants" do
 
     expect(page).to have_content "New Restaurant Form"
   end
+
   scenario "clicks link and is taken to show page for given restaurant" do
     dumpling_king = Restaurant.create(name: 'Dumpling King', address: '33 Harrison Ave', city: 'Boston', state: 'MA', zip: '12111', description: "Straightforward dumplings for a great price.")
 

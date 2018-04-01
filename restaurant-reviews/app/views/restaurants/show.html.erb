@@ -5,7 +5,14 @@
   </p>
 </h1>
 <div class="card-section">
+  <h5>Description</h5>
   <p><%= @restaurant.description %></p>
+</div>
+<div class="card-section">
+  <h5>Categories</h5>
+  <% @restaurant.categories.each do |category| %>
+  <p><%= category.name %></p>
+  <% end %>
 </div>
 <div>
   <%= link_to "Add a Review", new_restaurant_review_path(@restaurant), class: 'button', method: :get %>

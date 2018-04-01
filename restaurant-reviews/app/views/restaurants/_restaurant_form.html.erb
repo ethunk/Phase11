@@ -20,6 +20,20 @@
   <%= f.label :description, "Description" %>
   <%= f.text_area :description %>
 
+  <table class='container'>
+      <th colspan="2"><%= f.label "Categories" %></th>
+      <%= f.collection_check_boxes(:categorizations, Category.all, :id, :name) do |cb| %>
+      <tr>
+        <td class='category_cell'><%= cb.label %> </td>
+        <% if @category_names.include?(cb.text) %>
+          <td><%= cb.check_box(class: 'category_checkbox', checked: true) %>
+        <% else %>
+          <td><%= cb.check_box(class: 'category_checkbox', checked: false) %>
+        <% end %>
+      </tr>
+      <% end %>
+  </table>
+
   <%= f.submit "Add Restaurant", class: 'button', method: :post, url: restaurants_path  %>
 
 <% end %>

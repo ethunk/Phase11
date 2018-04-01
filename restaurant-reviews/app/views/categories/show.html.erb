@@ -1,0 +1,12 @@
+<h1>
+  <%= @category.name %>
+</h1>
+
+
+<% @restaurants.each do |restaurant| %>
+  <div class="card" style="width: 300px;">
+    <div class="card-divider">
+      <%= link_to("#{restaurant.name}", restaurant_path(restaurant.id), :id => "restaurant_name") %>
+    </div>
+  </div>
+<% end %>

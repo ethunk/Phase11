@@ -5,3 +5,7 @@ description: "Create a web application to review restaurants."
 tags: "system-check, rails"
 ignore:
 - "restaurant-reviews.md"
+behaviors:
+  - rails
+  - ruby_and_rspec
+  - capybara

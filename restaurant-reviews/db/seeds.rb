@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-if Rails.env.development?
+if Rails.env.development? || Rails.env.test?
     UserSeeder.seed!
     RestaurantSeeder.seed!
+    CategorySeeder.seed!
+    CategorizationSeeder.seed!
 end
